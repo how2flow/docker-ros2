@@ -1,0 +1,19 @@
+version: '3'
+
+volumes:
+  share_data: {}
+  kernel: {}
+
+services:
+  ros2:
+    image: how2flow/ros2:foxy
+    container_name: robot_ws
+    stdin_open: true
+    tty: true
+    volumes:
+      - share_data:/var/lib/share_data
+    environment:
+      - PYTHONUNBUFFERED=0
+
+# docker compose up -d
+# docker attach robot_ws
