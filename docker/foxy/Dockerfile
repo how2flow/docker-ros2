@@ -44,5 +44,7 @@ RUN wget -O .gitconfig --no-check-certificate $GITCONFIG && \
 RUN git clone "https://github.com/VundleVim/Vundle.vim.git" \
   .vim/bundle/Vundle.vim
 RUN vim +PluginInstall +qall
+RUN echo "" >> .bashrc
+RUN echo "# terminal set" >> .bashrc
 RUN echo "alias tmux='tmux -2'" >> .bashrc
 RUN echo "set -o vi" >> .bashrc
