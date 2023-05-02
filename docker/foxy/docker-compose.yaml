@@ -7,7 +7,8 @@ volumes:
 services:
   ros2:
     image: how2flow/ros2:foxy
-    container_name: robot_ws
+    container_name: ros2-foxy
+    network_mode: "host"
     stdin_open: true
     tty: true
     volumes:
